@@ -9,18 +9,31 @@ pode virar um problema maior*, como uma queda de árvore, uma queda sobre a fia�
 
 ![Chamados de manejo arbóreo por bairro e os 10 logradouros com mais chamados](figures/mapa_manejo_top10_logradouros.png)
 
+## Notebooks
+
+Cada notebook abre com uma apresentação (contexto, pergunta, dados, roteiro e principais resultados) e
+guarda as saídas da execução original, então dá para ler tudo direto no GitHub.
+
+| # | Notebook | Pergunta | Abrir |
+|---|---|---|---|
+| 01 | [Catálogo de subtipos](01_catalogo_de_subtipos.ipynb) | O que conta como "poda" no 1746? | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renanbrettas/Projeto-ci-ncia-de-dados---Podas-de-rvore/blob/main/01_catalogo_de_subtipos.ipynb) |
+| 02 | [Light e COR](02_light_e_cor.ipynb) | Dá para ligar a poda à rede elétrica com dados abertos? | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renanbrettas/Projeto-ci-ncia-de-dados---Podas-de-rvore/blob/main/02_light_e_cor.ipynb) |
+| 03 | [Qualidade e extração](03_qualidade_e_extracao.ipynb) | Quão bem localizados estão os chamados? | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renanbrettas/Projeto-ci-ncia-de-dados---Podas-de-rvore/blob/main/03_qualidade_e_extracao.ipynb) |
+| 04 | [Análise espacial](04_analise_espacial.ipynb) | Onde se concentram os chamados? | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renanbrettas/Projeto-ci-ncia-de-dados---Podas-de-rvore/blob/main/04_analise_espacial.ipynb) |
+| 05 | [Poda → queda](05_poda_queda.ipynb) | A poda antecipa a queda da árvore? | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/renanbrettas/Projeto-ci-ncia-de-dados---Podas-de-rvore/blob/main/05_poda_queda.ipynb) |
+
 ---
 
 ## Principais resultados
 
 | # | Achado | Onde |
 |---|---|---|
-| 1 | O 1746 registrou **20,3 milhões** de chamados em 5.545 combinações tipo/subtipo. A poda aparece em vários subtipos quase idênticos, por causa de mudanças na taxonomia. O recorte adotado tem 3 subtipos e **133.715 chamados em 2021–2025**. | [01](notebooks/01_catalogo_subtipos.ipynb) |
-| 2 | A **Light não aparece no 1746**: a poda é atendida pela COMLURB, e nenhuma justificativa menciona fiação ou rede elétrica. | [02](notebooks/02_light_e_cor.ipynb) |
-| 3 | No **COR**, a Light tem **5.407 acionamentos em 2.940 eventos**, sobretudo em queda de árvore (1.103) e queda de poste (345). Mas a tabela **termina em abril de 2024**, reaproveita IDs e tem lacunas de registro. | [02](notebooks/02_light_e_cor.ipynb) |
-| 4 | A localização por logradouro é boa (~98–99%), mas a **coordenada válida cai de 94,7% (2021) para 59,2% (2025)**. | [03](notebooks/03_qualidade_e_extracao.ipynb) |
-| 5 | Foram **212.501** chamados de manejo arbóreo em 2021–2025, distribuídos por 14.089 logradouros. Os campeões são vias longas (Estrada dos Bandeirantes, R. Conde de Bonfim, Av. Brasil), então comparar logradouros exige normalizar pela extensão. | [04](notebooks/04_analise_espacial.ipynb) |
-| 6 | **Poda → queda:** a partir de 30 dias, a chance de queda de árvore no mesmo logradouro depois de uma poda é *menor* do que o acaso prevê (razão obs/esp de 0,74 a 0,85). O pequeno excesso em 7 dias aparece também *antes* da poda, o que indica registro conjunto do mesmo episódio, e não antecipação. | [05](notebooks/05_poda_queda.ipynb) |
+| 1 | O 1746 registrou **20,3 milhões** de chamados em 5.545 combinações tipo/subtipo. A poda aparece em vários subtipos quase idênticos, por causa de mudanças na taxonomia. O recorte adotado tem 3 subtipos e **133.715 chamados em 2021–2025**. | [01](01_catalogo_de_subtipos.ipynb) |
+| 2 | A **Light não aparece no 1746**: a poda é atendida pela COMLURB, e nenhuma justificativa menciona fiação ou rede elétrica. | [02](02_light_e_cor.ipynb) |
+| 3 | No **COR**, a Light tem **5.407 acionamentos em 2.940 eventos**, sobretudo em queda de árvore (1.103) e queda de poste (345). Mas a tabela **termina em abril de 2024**, reaproveita IDs e tem lacunas de registro. | [02](02_light_e_cor.ipynb) |
+| 4 | A localização por logradouro é boa (~98–99%), mas a **coordenada válida cai de 94,7% (2021) para 59,2% (2025)**. | [03](03_qualidade_e_extracao.ipynb) |
+| 5 | Foram **212.501** chamados de manejo arbóreo em 2021–2025, distribuídos por 14.089 logradouros. Os campeões são vias longas (Estrada dos Bandeirantes, R. Conde de Bonfim, Av. Brasil), então comparar logradouros exige normalizar pela extensão. | [04](04_analise_espacial.ipynb) |
+| 6 | **Poda → queda:** a partir de 30 dias, a chance de queda de árvore no mesmo logradouro depois de uma poda é *menor* do que o acaso prevê (razão obs/esp de 0,74 a 0,85). O pequeno excesso em 7 dias aparece também *antes* da poda, o que indica registro conjunto do mesmo episódio, e não antecipação. | [05](05_poda_queda.ipynb) |
 
 **Conclusão:** com o recorte e a unidade espacial usados até aqui, **o volume de chamados de poda, sozinho,
 não antecipa quedas de árvore**. Para a questão da rede elétrica, os dados abertos do Data.Rio são
@@ -33,12 +46,11 @@ Detalhes, decisões e problemas de qualidade dos dados: [`docs/achados_e_qualida
 ## Estrutura do repositório
 
 ```
-├── notebooks/
-│   ├── 01_catalogo_subtipos.ipynb      # taxonomia do 1746 e definição do recorte de poda
-│   ├── 02_light_e_cor.ipynb            # Light no 1746 e no COR; integridade das tabelas do COR
-│   ├── 03_qualidade_e_extracao.ipynb   # qualidade da localização; extração base 2021–2025
-│   ├── 04_analise_espacial.ipynb       # bairros, logradouros, mapas
-│   └── 05_poda_queda.ipynb             # poda -> queda: incidência vs. acaso
+├── 01_catalogo_de_subtipos.ipynb    # taxonomia do 1746 e definição do recorte de poda
+├── 02_light_e_cor.ipynb             # Light no 1746 e no COR; integridade das tabelas do COR
+├── 03_qualidade_e_extracao.ipynb    # qualidade da localização; extração base 2021–2025
+├── 04_analise_espacial.ipynb        # bairros, logradouros, mapas
+├── 05_poda_queda.ipynb              # poda -> queda: incidência vs. acaso
 ├── src/podas/
 │   ├── bq.py        # conexão com o BigQuery e consultas com estimativa de custo
 │   ├── config.py    # tabelas, recortes, período e caminhos
@@ -49,9 +61,6 @@ Detalhes, decisões e problemas de qualidade dos dados: [`docs/achados_e_qualida
 ├── data/            # extrações locais (não versionadas)
 └── outputs/         # planilhas geradas (não versionadas)
 ```
-
-Os notebooks guardam as **saídas da execução original** no Google Colab, então dá para ler os resultados
-sem rodar nada.
 
 ## Fontes de dados
 
@@ -84,8 +93,9 @@ gcloud auth application-default login
 export GCP_PROJECT_ID=seu-projeto-gcp
 ```
 
-No **Google Colab**, clone o repositório, rode `%env GCP_PROJECT_ID=seu-projeto-gcp` e abra os
-notebooks. A autenticação é pedida automaticamente.
+No **Google Colab**, use os botões "Open in Colab" da tabela acima e descomente, na célula de
+configuração, a linha `os.environ["GCP_PROJECT_ID"] = ...` com o seu projeto. O código do repositório
+é baixado e a autenticação é pedida automaticamente.
 
 **3. Ordem de execução.** Rode os notebooks de 01 a 05. O notebook 03 gera `data/poda_2021_2025.parquet`,
 que os notebooks 04 e 05 usam. Toda consulta mostra o custo estimado antes de rodar e tem um teto de
