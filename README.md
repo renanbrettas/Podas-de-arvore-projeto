@@ -4,10 +4,34 @@ Análise exploratória dos chamados de **manejo arbóreo (poda de árvore)** da 
 ocorrências do **Centro de Operações Rio (COR)**, a partir das tabelas públicas do
 [Data.Rio](https://www.data.rio/) no BigQuery.
 
-**Pergunta de fundo:** a prefeitura consegue saber, com os dados que já tem, *quando um chamado de poda
-pode virar um problema maior*, como uma queda de árvore, uma queda sobre a fiação ou uma falta de luz?
+## Resumo
 
-> 📌 **Resumo rápido:** a suposição inicial e as conclusões em uma página estão em **[RESUMO.md](RESUMO.md)**.
+### 💡 Suposição inicial
+**Chamados de poda de árvore seriam um sinal de alerta.** Se um local acumula pedidos de poda, isso
+indicaria árvores em risco, e a prefeitura poderia usar os dados do 1746 para **prever onde um pedido de
+poda vai virar um problema maior** (queda de árvore, queda sobre a fiação, falta de luz) e agir antes.
+
+### 🔎 O que os dados mostraram
+
+| Hipótese | Resultado | Em uma frase |
+|---|:---:|---|
+| Dá para isolar a poda no 1746 | ✅ com ressalvas | Sim, mas a taxonomia mudou; recorte final de 3 subtipos e 133.715 chamados (2021–2025). |
+| Dá para identificar a Light | ❌ | Não aparece no 1746; no COR aparece (~5,4 mil acionamentos), mas a série para em abril de 2024. |
+| A localização é confiável | ⚠️ parcial | Bairro/logradouro ~98–99%; coordenada cai de 95% para 59% dos chamados entre 2021 e 2025. |
+| **Poda antecipa queda** | ❌ | A partir de 30 dias, quedas depois da poda são até **menos** frequentes que o acaso prevê. |
+
+### ✅ Conclusões
+1. **O pedido de poda, sozinho, não prevê queda de árvore.** No mesmo logradouro, a chance de queda
+   depois da poda fica de 15% a 26% *abaixo* do esperado pelo acaso (30 a 365 dias).
+2. **O que parecia sinal era coincidência de registro:** o pequeno excesso de quedas na semana da poda
+   aparece também na semana *antes* dela. Poda e queda são abertas juntas no mesmo episódio (ex.: temporal).
+3. **A questão da rede elétrica não se responde com dados abertos:** é preciso obter dados da Light ou do COR atualizado.
+4. **Volume bruto por local engana:** os logradouros campeões são apenas vias longas; é preciso normalizar
+   pela extensão ou usar trecho/CEP.
+5. **Para a prefeitura:** um alerta útil precisa cruzar os chamados com **chuva**, **rede elétrica**,
+   **atendimento da poda** e uma unidade espacial menor.
+
+> Versão em uma página, com implicações e próximos passos: **[RESUMO.md](RESUMO.md)**.
 
 ![Chamados de manejo arbóreo por bairro e os 10 logradouros com mais chamados](figures/mapa_manejo_top10_logradouros.png)
 
@@ -26,7 +50,7 @@ guarda as saídas da execução original, então dá para ler tudo direto no Git
 
 ---
 
-## Principais resultados
+## Resultados por notebook
 
 | # | Achado | Onde |
 |---|---|---|
@@ -36,10 +60,6 @@ guarda as saídas da execução original, então dá para ler tudo direto no Git
 | 4 | A localização por logradouro é boa (~98–99%), mas a **coordenada válida cai de 94,7% (2021) para 59,2% (2025)**. | [03](03_qualidade_e_extracao.ipynb) |
 | 5 | Foram **212.501** chamados de manejo arbóreo em 2021–2025, distribuídos por 14.089 logradouros. Os campeões são vias longas (Estrada dos Bandeirantes, R. Conde de Bonfim, Av. Brasil), então comparar logradouros exige normalizar pela extensão. | [04](04_analise_espacial.ipynb) |
 | 6 | **Poda → queda:** a partir de 30 dias, a chance de queda de árvore no mesmo logradouro depois de uma poda é *menor* do que o acaso prevê (razão obs/esp de 0,74 a 0,85). O pequeno excesso em 7 dias aparece também *antes* da poda, o que indica registro conjunto do mesmo episódio, e não antecipação. | [05](05_poda_queda.ipynb) |
-
-**Conclusão:** com o recorte e a unidade espacial usados até aqui, **o volume de chamados de poda, sozinho,
-não antecipa quedas de árvore**. Para a questão da rede elétrica, os dados abertos do Data.Rio são
-insuficientes. Os próximos passos estão listados [abaixo](#próximos-passos).
 
 Detalhes, decisões e problemas de qualidade dos dados: [`docs/achados_e_qualidade_dos_dados.md`](docs/achados_e_qualidade_dos_dados.md).
 
