@@ -7,6 +7,8 @@ ocorrências do **Centro de Operações Rio (COR)**, a partir das tabelas públi
 **Pergunta de fundo:** a prefeitura consegue saber, com os dados que já tem, *quando um chamado de poda
 pode virar um problema maior*, como uma queda de árvore, uma queda sobre a fiação ou uma falta de luz?
 
+> 📌 **Resumo rápido:** a suposição inicial e as conclusões em uma página estão em **[RESUMO.md](RESUMO.md)**.
+
 ![Chamados de manejo arbóreo por bairro e os 10 logradouros com mais chamados](figures/mapa_manejo_top10_logradouros.png)
 
 ## Notebooks
@@ -51,6 +53,7 @@ Detalhes, decisões e problemas de qualidade dos dados: [`docs/achados_e_qualida
 ├── 03_qualidade_e_extracao.ipynb    # qualidade da localização; extração base 2021–2025
 ├── 04_analise_espacial.ipynb        # bairros, logradouros, mapas
 ├── 05_poda_queda.ipynb              # poda -> queda: incidência vs. acaso
+├── RESUMO.md                        # suposição inicial e conclusões, em uma página
 ├── src/podas/
 │   ├── bq.py        # conexão com o BigQuery e consultas com estimativa de custo
 │   ├── config.py    # tabelas, recortes, período e caminhos
