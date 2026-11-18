@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Credenciais e variáveis de ambiente
+.env
+*.json.key
+credentials*.json
+application_default_credentials.json
+
+# Dados extraídos e saídas geradas (reproduzíveis a partir do BigQuery)
+data/*
+!data/.gitkeep
+outputs/*
+!outputs/.gitkeep
+
+# Sistema
+.DS_Store
+Thumbs.db
